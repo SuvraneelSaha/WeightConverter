@@ -141,7 +141,7 @@ function displayResults(name, weight, height, weightInLbs, bmi, categoryInfo) {
     
     // Apply category styling -- directly to the html elements 
     commentDisplay.className = categoryInfo.className;
-    commentDisplay1.className=categoryInfo.className;
+    commentDisplay1.className = categoryInfo.className;
     
     // Show result section with animation
     resultContent.style.display = 'flex';
