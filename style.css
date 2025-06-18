@@ -201,7 +201,7 @@ input::placeholder {
   border-left-color: #667eea;
 }
 
-#comment {
+#comment , #comment1 {
   font-weight: bold;
   font-size: 1.1rem;
   border-left-color: #28a745;

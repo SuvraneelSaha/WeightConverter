@@ -11,6 +11,7 @@ const heightDisplay = document.getElementById('height-display');
 const convertedWeightDisplay = document.getElementById('converted-weight');
 const bmiDisplay = document.getElementById('bmi');
 const commentDisplay = document.getElementById('comment');
+const commentDisplay1 = document.getElementById('comment1');
 const resultContent = document.querySelector('.result-content');
 
 // Add event listener to calculate button
@@ -136,9 +137,11 @@ function displayResults(name, weight, height, weightInLbs, bmi, categoryInfo) {
     convertedWeightDisplay.textContent = `Weight in Lbs: ${weightInLbs} lbs`;
     bmiDisplay.textContent = `BMI: ${bmi}`;
     commentDisplay.textContent = `Category: ${categoryInfo.category}`;
+    commentDisplay1.textContent= `Comment: ${categoryInfo.description}`;
     
-    // Apply category styling
+    // Apply category styling -- directly to the html elements 
     commentDisplay.className = categoryInfo.className;
+    commentDisplay1.className=categoryInfo.className;
     
     // Show result section with animation
     resultContent.style.display = 'flex';
@@ -202,3 +205,4 @@ heightInput.addEventListener('input', function() {
         }
     });
 });
+
