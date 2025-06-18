@@ -1,0 +1,344 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Main Container - Horizontal Layout */
+.weightConverter {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 1000px;
+  width: 100%;
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header Styling */
+.heading {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  padding: 25px 20px;
+}
+
+.heading h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Box Container - Horizontal Flex */
+.Box {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  align-items: stretch;
+  position: relative;
+}
+
+/* Input Section - Left Side */
+.input-Element {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+/* Input Field Containers */
+.nameClass,
+.weightClass,
+.heightClass {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 15px;
+  border: 2px solid #e1e5e9;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+  width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: #667eea;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Button Styling */
+.button-container {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+#calculateBtn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  width: 100%;
+}
+
+#calculateBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+#calculateBtn:active {
+  transform: translateY(-1px);
+}
+
+/* Separator Line */
+.input-Element::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent 10%, #e1e5e9 50%, transparent 90%);
+}
+
+/* Result Section - Right Side */
+.result {
+  flex: 1;
+  min-width: 300px;
+}
+
+.result-content {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  padding: 30px;
+  border-left: 5px solid #667eea;
+  height: 100%;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.result-content h3 {
+  color: #333;
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.result-content p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #555;
+  padding: 12px 15px;
+  background: white;
+  border-radius: 8px;
+  border-left: 3px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.result-content p:hover {
+  border-left-color: #667eea;
+  transform: translateX(5px);
+}
+
+/* Special styling for BMI and Category */
+#bmi {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #667eea;
+  border-left-color: #667eea;
+}
+
+#comment {
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-left-color: #28a745;
+}
+
+/* Category Color Coding */
+.underweight {
+  color: #17a2b8 !important;
+  border-left-color: #17a2b8 !important;
+}
+
+.normal {
+  color: #28a745 !important;
+  border-left-color: #28a745 !important;
+}
+
+.overweight {
+  color: #ffc107 !important;
+  border-left-color: #ffc107 !important;
+}
+
+.obese {
+  color: #dc3545 !important;
+  border-left-color: #dc3545 !important;
+}
+
+/* Hide result initially */
+.result-content.hidden {
+  opacity: 0.3;
+}
+
+.result-content.hidden p {
+  color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .Box {
+    gap: 30px;
+    padding: 30px;
+  }
+  
+  .heading h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .Box {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+  
+  .input-Element,
+  .result {
+    min-width: auto;
+  }
+  
+  .input-Element::after {
+    display: none;
+  }
+  
+  .heading h1 {
+    font-size: 1.8rem;
+  }
+  
+  .result-content {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  
+  .Box {
+    padding: 20px 15px;
+  }
+  
+  .heading h1 {
+    font-size: 1.5rem;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    padding: 12px;
+  }
+  
+  #calculateBtn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+  
+  .result-content {
+    padding: 20px;
+  }
+}
+
+/* Loading state */
+.loading #calculateBtn {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading input {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Error message styling */
+.error-message {
+    background: #dc3545;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    display: none;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>BMI Calculator</title>
+  </head>
+  <body>
+    <div class="weightConverter">
+      <div class="heading">
+        <h1>BMI Calculator Classic</h1>
+      </div>
+
+      <div class="Box">
+        <div class="input-Element">
+          <div class="nameClass">
+            <label for="username">Your Name : </label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your Name lad"
+              required
+            />
+          </div>
+          <div class="weightClass">
+            <label for="weight">Your Weight (kg):</label>
+            <input
+              type="number"
+              name="weight"
+              id="weight"
+              placeholder="Enter weight in kilograms"
+               min="1"
+              max="500"
+              required
+            />
+          </div>
+          <div class="heightClass">
+            <label for="height">Your Height (cm):</label>
+            <input
+              type="number"
+              name="height"
+              id="height"
+              min="50"
+              max="300"
+              placeholder="Enter your Height"
+              required
+            />
+          </div>
+
+           <div class="button-container">
+            <button type="button" id="calculateBtn">Calculate BMI</button>
+          </div>
+
+
+        </div>
+        <div class="result">
+          <div class="result-content">
+            <h3>Conversion Result:</h3>
+            <p id="userName-display">Name : </p>
+            <p id="weight-display">Weight in Kgs : </p>
+            <p id="height-display">Height in Cms :</p>
+            <p id="converted-weight">Weight in Lbs: </p>
+            <p id="bmi">BMI:</p>
+            <p id="comment">Category</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
